@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="./style.css">
+    <title>Kaspi.kz</title>
+</head>
+<body>
+
+    <!-- Заставка: показывается 1.5 сек и убирается -->
+    <div class="splash" id="splash">
+        <img src="./img/logo.png" alt="Логотип" class="splash__logo">
+    </div>
+
+    <div class="app" id="app">
+
+        <!-- ================= ГЛАВНАЯ ================= -->
+        <section class="view view--active" id="view-home">
+
+            <header class="header">
+                <form class="search" id="searchForm" autocomplete="off">
+                    <img class="search__icon" src="./img/icons/search.png" alt="" width="20" height="20">
+                    <input class="search__input" id="searchInput" type="search" placeholder="Поиск по Kaspi.kz" enterkeyhint="search">
+                    <button class="search__camera" id="cameraBtn" type="button" aria-label="Поиск по фото">
+                        <img src="./img/icons/camera.png" alt="" width="21" height="20">
+                    </button>
+                </form>
+                <input type="file" id="cameraInput" accept="image/*" capture="environment" hidden>
+
+                <button class="cart" id="cartBtn" type="button" aria-label="Корзина" data-open="cart">
+                    <img src="./img/icons/cart.png" alt="" width="29" height="28">
+                    <span class="badge">43</span>
+                </button>
+            </header>
+
+            <div class="skeleton banner"></div>
+
+            <nav class="grid">
+                <button class="grid__item" data-open="shop"><span class="grid__ico"><img src="./img/icons/shop.png" alt="" width="30" height="28"></span><span class="grid__label">Магазин</span></button>
+                <button class="grid__item" data-open="bank"><span class="grid__ico"><img src="./img/icons/bank.png" alt="" width="30" height="28"></span><span class="grid__label">Мой Банк</span></button>
+                <button class="grid__item" data-open="payments"><span class="grid__ico"><img src="./img/icons/payments.png" alt="" width="30" height="30"></span><span class="grid__label">Платежи</span></button>
+                <button class="grid__item" data-open="transfers"><span class="grid__ico"><img src="./img/icons/transfers.png" alt="" width="28" height="28"></span><span class="grid__label">Переводы</span></button>
+
+                <button class="grid__item" data-open="magnum"><span class="grid__ico"><img src="./img/icons/magnum.png" alt="" width="34" height="33"></span><span class="grid__label">Magnum</span></button>
+                <button class="grid__item" data-open="travel"><span class="grid__ico"><img src="./img/icons/travel.png" alt="" width="47" height="32"></span><span class="grid__label">Travel</span></button>
+                <button class="grid__item" data-open="gov"><span class="grid__ico"><img src="./img/icons/gov.png" alt="" width="30" height="31"></span><span class="grid__label">Госуслуги</span></button>
+                <button class="grid__item" data-open="kasper"><span class="grid__ico"><img src="./img/icons/kasper.png" alt="" width="31" height="33"></span><span class="grid__label">Kasper</span></button>
+            </nav>
+
+            <div class="divider"></div>
+
+            <div class="sk-row">
+                <div class="skeleton sk-row__sq"></div>
+                <div class="sk-row__lines">
+                    <div class="skeleton sk-line" style="width:100%"></div>
+                    <div class="skeleton sk-line" style="width:80%"></div>
+                </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="skeleton wide"></div>
+
+            <div class="sk-grid">
+                <div class="sk-row sk-row--small"><div class="skeleton sk-row__sq"></div><div class="sk-row__lines"><div class="skeleton sk-line" style="width:100%"></div><div class="skeleton sk-line" style="width:65%"></div></div></div>
+                <div class="sk-row sk-row--small"><div class="skeleton sk-row__sq"></div><div class="sk-row__lines"><div class="skeleton sk-line" style="width:100%"></div><div class="skeleton sk-line" style="width:65%"></div></div></div>
+                <div class="sk-row sk-row--small"><div class="skeleton sk-row__sq"></div><div class="sk-row__lines"><div class="skeleton sk-line" style="width:100%"></div><div class="skeleton sk-line" style="width:65%"></div></div></div>
+                <div class="sk-row sk-row--small"><div class="skeleton sk-row__sq"></div><div class="sk-row__lines"><div class="skeleton sk-line" style="width:100%"></div><div class="skeleton sk-line" style="width:65%"></div></div></div>
+            </div>
+
+            <h2 class="section-title">Вы недавно смотрели</h2>
+            <div class="carousel">
+                <div class="skeleton card"></div>
+                <div class="skeleton card"></div>
+                <div class="skeleton card"></div>
+                <div class="skeleton card"></div>
+            </div>
+        </section>
+
+        <!-- ================= KASPI QR ================= -->
+        <section class="view" id="view-qr">
+            <div class="topbar"><h1>Kaspi QR</h1></div>
+            <div class="qr">
+                <div class="qr__frame">
+                    <i></i><i></i><i></i><i></i>
+                    <img src="./img/icons/qr_gray.png" alt="" width="23" height="23" style="width:64px;height:auto">
+                </div>
+                <p class="qr__text">Наведите камеру на QR-код<br>для оплаты или перевода</p>
+                <button class="btn" id="qrBtn" type="button">Включить камеру</button>
+            </div>
+        </section>
+
+        <!-- ================= СООБЩЕНИЯ ================= -->
+        <section class="view" id="view-messages">
+            <div class="topbar"><h1>Сообщения</h1></div>
+            <ul class="list" id="messagesList"></ul>
+        </section>
+
+        <!-- ================= СЕРВИСЫ ================= -->
+        <section class="view" id="view-services">
+            <div class="topbar"><h1>Сервисы</h1></div>
+            <ul class="list" id="servicesList"></ul>
+        </section>
+    </div>
+
+    <!-- Внутренняя страница (открывается при нажатии на кнопки) -->
+    <div class="page" id="page" aria-hidden="true">
+        <div class="topbar topbar--back">
+            <button class="back" id="backBtn" type="button" aria-label="Назад"></button>
+            <h1 id="pageTitle"></h1>
+        </div>
+        <div class="page__body" id="pageBody"></div>
+    </div>
+
+    <!-- Нижнее меню -->
+    <nav class="tabs" id="tabs">
+        <button class="tab tab--active" data-tab="home"><span class="tab__ico"><img src="./img/icons/home_red.png" data-on="./img/icons/home_red.png" data-off="./img/icons/home_gray.png" alt="" width="20" height="22"></span><span>Главная</span></button>
+        <button class="tab" data-tab="qr"><span class="tab__ico"><img src="./img/icons/qr_gray.png" data-on="./img/icons/qr_red.png" data-off="./img/icons/qr_gray.png" alt="" width="23" height="23"></span><span>Kaspi QR</span></button>
+        <button class="tab" data-tab="messages"><span class="tab__ico"><img src="./img/icons/messages_gray.png" data-on="./img/icons/messages_red.png" data-off="./img/icons/messages_gray.png" alt="" width="35" height="28"><span class="badge">58</span></span><span>Сообщения</span></button>
+        <button class="tab" data-tab="services"><span class="tab__ico"><img src="./img/icons/menu_gray.png" data-on="./img/icons/menu_red.png" data-off="./img/icons/menu_gray.png" alt="" width="21" height="17"></span><span>Сервисы</span></button>
+    </nav>
+
+    <div class="toast" id="toast"></div>
+
+    <script src="./script.js"></script>
+</body>
+</html>
